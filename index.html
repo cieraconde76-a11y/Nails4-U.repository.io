@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nails 4-U | Luxury Nail Bar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #050507;
+    --bg-soft: #0b0b10;
+    --text: #f5f5f5;
+    --muted: #b3b3b3;
+    --gold: #e4c58a;
+    --gold-soft: rgba(228,197,138,0.25);
+    --card: #111118;
+}
+
+body.dark {
+    --bg: #f5f5f5;
+    --bg-soft: #ffffff;
+    --text: #111111;
+    --muted: #555555;
+    --gold: #c59b4f;
+    --gold-soft: rgba(197,155,79,0.18);
+    --card: #f9f6f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(circle at top, #151520 0, var(--bg) 45%);
+    color: var(--text);
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 14px 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid var(--gold-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 16px;
+    font-family: "Playfair Display", serif;
+}
+
+.logo-text {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.12em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 14px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    transform: translateY(-1px);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-toggle {
+    border-radius: 999px;
+    border: 1px solid var(--gold-soft);
+    background: transparent;
+    color: var(--gold);
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: radial-gradient(circle at top, #ffffff, #f5e3c0);
+    color: #111;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(228,197,138,0.55);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 0 26px rgba(228,197,138,0.8);
+}
+
+.btn-ghost {
+    background: transparent;
+    border-radius: 999px;
+    border: 1px solid var(--gold-soft);
+    color: var(--gold);
+    padding: 9px 18px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    padding: 70px 7vw 60px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-left {
+    animation: fadeIn 0.9s ease forwards;
+}
+
+.hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 54px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+}
+
+.hero-sub {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 420px;
+    margin-bottom: 22px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 18px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-right {
+    position: relative;
+    animation: slideUp 0.9s ease forwards;
+}
+
+.hero-card {
+    background: radial-gradient(circle at top, rgba(228,197,138,0.18), var(--card));
+    border-radius: 26px;
+    padding: 22px 20px 18px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+}
+
+.hero-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.hero-card-title {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-chip {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--gold-soft);
+    color: var(--gold);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.hero-grid-item {
+    background: rgba(0,0,0,0.35);
+    border-radius: 14px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.04);
+    font-size: 11px;
+}
+
+.hero-grid-item strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: var(--gold);
+}
+
+.hero-note {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* SECTION WRAPPER */
+.section {
+    padding: 10px 7vw 60px;
+}
+
+/* SERVICES PREVIEW */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+}
+
+.section-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
+    color: var(--gold);
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    margin: 4px 0 0;
+}
+
+.section-sub {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+}
+
+.service-card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 16px 16px 14px;
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+    font-size: 13px;
+}
+
+.service-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.service-name {
+    font-weight: 500;
+}
+
+.service-price {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.service-note {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 40px;
+    }
+    .hero-right {
+        order: -1;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-inline: 5vw;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+    .hero {
+        padding-inline: 5vw;
+    }
+    .section {
+        padding-inline: 5vw;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="logo-mark">N</div>
+        <div class="logo-text">Nails 4‑U</div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Book</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-right">
+        <button class="btn-ghost" onclick="location.href='booking.html'">Book Now</button>
+        <button id="themeToggle" class="theme-toggle">☾</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-left">
+        <div class="hero-kicker">Miramar · Florida</div>
+        <h1 class="hero-title">Luxury nail artistry<br>for every occasion.</h1>
+        <p class="hero-sub">
+            Nails 4‑U is a modern nail bar offering acrylics, gel, spa pedicures, and custom designs with a luxury touch.
+        </p>
+
+        <div class="hero-cta">
+            <button class="btn-primary" onclick="location.href='booking.html'">Book Your Appointment</button>
+            <button class="btn-ghost" onclick="location.href='#services'">View Services</button>
+        </div>
+
+        <div class="hero-meta">
+            <span>★ 3.5 · 61 Google reviews</span>
+            <span>Mon–Sat · 9:30–7 · Sun 10–5</span>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="hero-card">
+            <div class="hero-card-header">
+                <div class="hero-card-title">Signature Sets</div>
+                <div class="hero-chip">By Kevin & Team</div>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-grid-item">
+                    <strong>Acrylic Full Set</strong>
+                    Short / Medium · from $45
+                </div>
+                <div class="hero-grid-item">
+                    <strong>Gel Manicure</strong>
+                    Classic + Gel Finish · $35
+                </div>
+                <div class="hero-grid-item">
+                    <strong>Spa Pedicure</strong>
+                    Hot stones · from $60
+                </div>
+            </div>
+
+            <p class="hero-note">
+                "Best nail art in Miramar. I brought in a complex design and they nailed it perfectly."
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section id="services" class="section">
+    <div class="section-header">
+        <div>
+            <div class="section-kicker">Services</div>
+            <h2 class="section-title">Acrylics, gel, spa pedicures & more.</h2>
+        </div>
+        <div class="section-sub">
+            Detailed menu available on the Services page.
+        </div>
+    </div>
+
+    <div class="service-grid">
+        <div class="service-card">
+            <div class="service-top">
+                <div class="service-name">Acrylic Full Set</div>
+                <div class="service-price">$45+</div>
+            </div>
+            <div class="service-note">Short / medium length, custom shapes available.</div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-top">
+                <div class="service-name">Gel Manicure</div>
+                <div class="service-price">$35</div>
+            </div>
+            <div class="service-note">Classic manicure finished with long‑lasting gel polish.</div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-top">
+                <div class="service-name">Deluxe Pedicure</div>
+                <div class="service-price">$45</div>
+            </div>
+            <div class="service-note">Exfoliation, massage, and polish for total relaxation.</div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-top">
+                <div class="service-name">Custom Nail Art</div>
+                <div class="service-price">$5+ / nail</div>
+            </div>
+            <div class="service-note">From minimalist lines to full‑set statement designs.</div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center; padding:24px 0; font-size:12px; color:var(--muted); border-top:1px solid rgba(255,255,255,0.06);">
+    © <span id="year"></span> Nails 4‑U Miramar. All rights reserved.
+</footer>
+
+<script>
+// Auto year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Theme toggle
+const toggle = document.getElementById("themeToggle");
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+});
+</script>
+
