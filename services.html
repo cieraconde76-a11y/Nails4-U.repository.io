@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nails 4-U | Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #050507;
+    --text: #f5f5f5;
+    --muted: #b3b3b3;
+    --gold: #e4c58a;
+    --gold-soft: rgba(228,197,138,0.25);
+    --card: #111118;
+}
+body.dark {
+    --bg: #f5f5f5;
+    --text: #111;
+    --muted: #555;
+    --gold: #c59b4f;
+    --gold-soft: rgba(197,155,79,0.18);
+    --card: #f9f6f0;
+}
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: radial-gradient(circle at top, #151520 0, var(--bg) 45%);
+    color: var(--text);
+}
+.navbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(16px);
+    background: rgba(0,0,0,0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 14px 7vw;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display:flex; align-items:center; gap:10px; }
+.logo-mark {
+    width:32px;height:32px;border-radius:999px;
+    border:1px solid var(--gold-soft);display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-family:"Playfair Display",serif;
+}
+.logo-text {
+    font-family:"Playfair Display",serif;
+    letter-spacing:0.12em;font-size:14px;text-transform:uppercase;
+}
+.nav-links { display:flex; gap:22px; }
+.nav-links a {
+    text-decoration:none;color:var(--muted);
+    text-transform:uppercase;letter-spacing:0.16em;font-size:11px;
+}
+.nav-links a:hover { color:var(--gold); }
+.theme-toggle {
+    border-radius:999px;border:1px solid var(--gold-soft);
+    background:transparent;color:var(--gold);padding:6px 10px;cursor:pointer;
+}
+.page {
+    padding:60px 7vw 50px;
+    max-width:900px;margin:auto;
+}
+h1 {
+    font-family:"Playfair Display",serif;
+    font-size:32px;margin-bottom:6px;
+}
+.page-sub { color:var(--muted);font-size:14px;margin-bottom:26px; }
+.section-title {
+    font-family:"Playfair Display",serif;
+    font-size:22px;margin:26px 0 8px;
+}
+table {
+    width:100%;border-collapse:collapse;
+    background:var(--card);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45);
+}
+td {
+    padding:10px 14px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:13px;
+}
+tr:last-child td { border-bottom:none; }
+td.price { text-align:right;color:var(--gold);font-weight:600; }
+footer {
+    text-align:center;padding:24px 0;font-size:12px;
+    color:var(--muted);border-top:1px solid rgba(255,255,255,0.06);
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-mark">N</div>
+        <div class="logo-text">Nails 4‑U</div>
+    </div>
+    <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Book</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle">☾</button>
+</nav>
+
+<div class="page">
+    <h1>Service Menu</h1>
+    <div class="page-sub">A curated selection of acrylics, gel, spa pedicures, and custom nail art.</div>
+
+    <h2 class="section-title">Acrylics</h2>
+    <table>
+        <tr><td>Full Set (Short/Medium)</td><td class="price">$45+</td></tr>
+        <tr><td>Full Set (Long)</td><td class="price">$55+</td></tr>
+        <tr><td>Fill‑in</td><td class="price">$35+</td></tr>
+        <tr><td>Specialty Shapes (Coffin, Almond, Stiletto)</td><td class="price">+$5</td></tr>
+    </table>
+
+    <h2 class="section-title">Natural Nail Care</h2>
+    <table>
+        <tr><td>Classic Manicure</td><td class="price">$20</td></tr>
+        <tr><td>Gel Polish (Shellac) Manicure</td><td class="price">$35</td></tr>
+        <tr><td>Nail Strengthening Treatment</td><td class="price">$15</td></tr>
+    </table>
+
+    <h2 class="section-title">Pedicure Spa</h2>
+    <table>
+        <tr><td>Basic Pedicure</td><td class="price">$30</td></tr>
+        <tr><td>Deluxe Pedicure</td><td class="price">$45</td></tr>
+        <tr><td>Spa Pedicure with Hot Stones</td><td class="price">$60</td></tr>
+    </table>
+
+    <h2 class="section-title">Add‑Ons</h2>
+    <table>
+        <tr><td>Custom Nail Art</td><td class="price">$5+ per nail</td></tr>
+        <tr><td>Nail Repair</td><td class="price">$5+</td></tr>
+        <tr><td>Polish Change (Hands/Feet)</td><td class="price">$12 / $15</td></tr>
+    </table>
+</div>
+
+<footer>
+    © <span id="year"></span> Nails 4‑U Miramar. All rights reserved.
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const toggle = document.getElementById("themeToggle");
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+});
+</script>
+
+</body>
+</html>
