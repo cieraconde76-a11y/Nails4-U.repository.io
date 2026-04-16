@@ -1,0 +1,15 @@
+:root {
+    --bg: #fff5f8;
+    --text: #333;
+    --accent: #d6336c;
+    --card: #ffffff;
+    --nav-bg: #ffffff;
+}
+
+.dark {
+    --bg: #1a1a1a;
+    --text: #f2f2f2;
+    --accent: #ff7aa8;
+    --card: #2a2a2a;
+    --nav-bg: #111;
+}
